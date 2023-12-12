@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "497339909132",
+    "project_id": "geekschatsystem-371bb",
+    "storage_bucket": "geekschatsystem-371bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497339909132:android:d7e2f2461222bb2117da29",
+        "android_client_info": {
+          "package_name": "com.example.geekschatsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9dVwDYxtYsaWJoRdgPRrt-9laiMXQl8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

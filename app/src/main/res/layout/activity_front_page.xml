@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_10sdp"
+    tools:context=".activities.FrontPage">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/FrameLayout1"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="146dp"
+        android:src="@drawable/logo"
+        app:civ_circle_background_color="@color/primary"
+        app:civ_border_width="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+   <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/FrameLayout1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:fillViewport="true">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:cardElevation="@dimen/_4sdp"
+            >
+
+            <LinearLayout
+                android:id="@+id/FrameLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/primary"
+                app:layout_constraintTop_toBottomOf="@id/FrameLayout1">
+
+                <TextView
+                    android:id="@+id/LoginText"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:paddingRight="@dimen/_30sdp"
+                    android:gravity="end"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_18sdp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/RegisterText"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_30sdp"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_18sdp"
+                    android:text="Register"
+                    android:layout_marginEnd="@dimen/_12sdp"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/FrameLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/_30sdp"
+                >
+
+
+                <EditText
+                    android:id="@+id/RName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/shapes"
+                    android:drawableLeft="@drawable/person"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/RSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/shapes"
+                    android:drawableLeft="@drawable/baseline_person_add_24"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Surname"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/REmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/shapes"
+                    android:drawableLeft="@drawable/baseline_alternate_email_24"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_10sdp" />
+
+
+
+                <EditText
+                    android:id="@+id/RPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/shapes"
+                    android:drawableLeft="@drawable/baseline_lock_open_24"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/RConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/shapes"
+                    android:drawableLeft="@drawable/baseline_lock_open_24"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/_12sdp" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <Button
+                        android:id="@+id/Lbutton"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_40sdp"
+                        android:layout_marginEnd="@dimen/_40sdp"
+                        android:padding="@dimen/_12sdp"
+                        android:text="REGISTER"
+                        app:cornerRadius="100dp"
+                        />
+
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBar3"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="62dp"
+                        android:layout_height="59dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/FrameLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_230sdp"
+                android:visibility="invisible"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_55sdp"
+                android:padding="@dimen/_30sdp">
+
+
+                <EditText
+                    android:id="@+id/Username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/shapes"
+                    android:drawableLeft="@drawable/baseline_person_24"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_10sdp" />
+
+
+
+                <EditText
+                    android:id="@+id/Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/shapes"
+                    android:drawableLeft="@drawable/baseline_lock_24"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/_12sdp" />
+
+
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <Button
+                        android:id="@+id/LoginButton"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_40sdp"
+                        android:layout_marginEnd="@dimen/_40sdp"
+                        android:padding="@dimen/_12sdp"
+                        android:text="LOGIN"
+                        app:cornerRadius="100dp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar4"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="62dp"
+                        android:layout_height="59dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible"
+                        />
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+<!--            <com.etebarian.meowbottomnavigation.MeowBottomNavigation-->
+<!--                android:id="@+id/mewoView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:mbn_backgroundBottomColor="@color/primary"-->
+<!--                android:background="@color/primary"-->
+<!--                app:mbn_countBackgroundColor="#ff6f00"-->
+<!--                app:mbn_countTextColor="#ffffff"-->
+<!--                app:mbn_defaultIconColor="#90a4ae"-->
+<!--                app:mbn_rippleColor="#2f424242"-->
+<!--                app:mbn_selectedIconColor="@color/secondary_text"-->
+<!--                app:mbn_shadowColor="#1f212121"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent" />-->
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
