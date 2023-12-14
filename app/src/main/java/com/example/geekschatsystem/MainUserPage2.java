@@ -10,7 +10,11 @@ import com.example.geekschatsystem.databinding.ActivityMainUserPage2Binding;
 
 public class MainUserPage2 extends AppCompatActivity {
     private MeowBottomNavigation meowBottomNavigation;
+    // is a library for implementing a bottom navigation bar.
+
     private ActivityMainUserPage2Binding binding;
+    // Data binding allows you to bind User interface components in layouts directly to data sources,
+
 
     @SuppressLint("MissingInflatedId")
     @Override

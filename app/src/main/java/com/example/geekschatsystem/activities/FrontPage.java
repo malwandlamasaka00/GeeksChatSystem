@@ -25,7 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FrontPage extends AppCompatActivity {
-
+  //declaring
     private ActivityFrontPageBinding binding;
     private PreferenceManager preferenceManager;
 
@@ -40,19 +40,26 @@ public class FrontPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
+        //getting info from xml
         binding = ActivityFrontPageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        //initializing the session
         preferenceManager = new PreferenceManager(getApplicationContext());
        setListerners();
 
+       //checking if the users is registered,if registered returns boolean
         if (preferenceManager.getBoolean(Constants.KEY_IS_REGISTER)) {
             startActivity(new Intent(getApplicationContext(), MainUserPage2.class));
             finish();
         }
 
+        //getting layouts ,logintext to navigates
         linearLayout1 = findViewById(R.id.FrameLayout3);
         linearLayout2 = findViewById(R.id.FrameLayout4);
         loginText = findViewById(R.id.LoginText);
+
+        //set layout to be visible
         linearLayout1.setVisibility(View.VISIBLE);
 
         // Set OnClickListener for the loginText TextView
@@ -65,7 +72,7 @@ public class FrontPage extends AppCompatActivity {
 
         registerText = findViewById(R.id.RegisterText);
 
-        // Set OnClickListener for the loginText TextView
+        // Set OnClickListener for the registerText TextView
         registerText.setOnClickListener(v -> {
             if (linearLayout2 != null) {
                 linearLayout2.setVisibility(View.VISIBLE);
@@ -77,9 +84,12 @@ public class FrontPage extends AppCompatActivity {
 
     private void setListerners() {
 
+        //when a user click a button , should perfom the action
+
         binding.LoginButton.setOnClickListener(v -> {
-            if(isValidLogInDetails()){
-                LOGIN();
+            if(isValidLogInDetails()) //validates
+                 {
+                LOGIN(); //true
             }
         });
         binding.Lbutton.setOnClickListener(v -> {
@@ -91,7 +101,7 @@ public class FrontPage extends AppCompatActivity {
 
     private void LOGIN(){
      loading(true);
-     FirebaseFirestore database = FirebaseFirestore.getInstance();
+     FirebaseFirestore database = FirebaseFirestore.getInstance(); // getting instance of the database
      database.collection(Constants.KEY_COLLECTION_USERS)
              .whereEqualTo(Constants.KEY_EMAIL,binding.Username.getText().toString())
              .whereEqualTo(Constants.KEY_CONFIRM_PASSWORD,binding.Password.getText().toString())
@@ -99,13 +109,13 @@ public class FrontPage extends AppCompatActivity {
              .addOnCompleteListener(task -> {
                  if(task.isSuccessful() && task.getResult() !=null
                  && task.getResult().getDocuments().size()>0){
-                     DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+                     DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);//represent user documents
                      preferenceManager.putBoolean(Constants.KEY_IS_REGISTER,true);
                      preferenceManager.putString(Constants.KEY_REGISTER,documentSnapshot.getId());
                      preferenceManager.putString(Constants.KEY_NAME,documentSnapshot.getString(Constants.KEY_NAME));
-                     Intent intent = new Intent(getApplicationContext(), MainUserPage2.class);
+                     Intent intent = new Intent(getApplicationContext(), MainUserPage2.class);//telling which page to open
                      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                     startActivity(intent);
+                     startActivity(intent);//start
                  }
                  else{
                      loading(false);
